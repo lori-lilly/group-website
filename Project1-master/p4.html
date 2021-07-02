@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Travel Planner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+     nav { 
+               background-color: #66998c;
+              }
+  body {
+       background-color: #e9fbf7;
+       }
+  
+  div {
+      font-family: "Courier New", Courier, monospace;
+	  font-weight: bold;
+	  }  
+
+   /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" 
+	  style="background-color:#99e699;" 
+	  data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" 
+		    href="#">Weather<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+        <li><a href="#">Spring</a></li>
+        <li><a href="#">Summer</a></li>
+        <li><a href="#">Fall</a></li>     
+		<li><a href="#">Winter</a></li>  
+		</ul>
+		</li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" 
+		    href="#">People<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+        <li class="dropdown"><a class="dropdown-toggle" 
+		data-toggle="dropdown" href="#">Group<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+        <li><a href="#">Single</a></li> 
+		<li><a href="#">Family</a></li> 
+		<li><a href="#">Couple</a></li> 
+		</ul>
+		</li>
+		<li><a href="#">Accessibility</a></li>
+            
+		</ul>
+		</li>
+		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" 
+		    href="#">Calendar<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		<li><a href="#">Calender will be here to choose dates</a>
+		</ul></li>  
+		<li><a data-toggle="tab" href="#about">About</a></li>
+      </ul>
+	   <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-toggle="modal" data-target="#myModal">
+		<span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Log In</h4>
+        </div>
+        <div class="modal-body">
+          <p></p>
+		 <div class="container-fluid">
+  <form id="formLogin"  action="/action_page.php">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <button type="submit" class="btn btn-block">Log in</button>
+	 <br><br>
+	 <div class="well">
+     <p> Not a member? </p>
+	 <button type="button" class="btn btn-default" data-toggle="modal" 
+	  data-target="#logInModal">Sign Up</button>
+	 
+	 <div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="logInModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <p></p>
+		 <div class="container-fluid">
+  <form action="/action_page.php">
+     <div class="form-group">
+      <label for="email">Name:</label>
+      <input type="name" class="form-control" id="name" placeholder="Enter Full Name
+	  " name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+	</div>
+  </form>
+</div>
+        </div>
+        <div class="modal-footer">
+         <p></p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+	 
+	</div>
+  </form>
+</div>
+        </div>
+        <div class="modal-footer">
+         <p></p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+  
+<div class="container text-center">    
+  <h3>Attraction name</h3><br>
+  <div class="row">
+    <div class="col-sm-8">
+     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+	  <li data-target="#myCarousel" data-slide-to="2"></li>
+	  <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+        <div class="carousel-caption">
+          <p>.</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <div class="carousel-caption">
+          <p>.</p>
+        </div>      
+      </div>
+	
+	 <div class="item">
+        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <div class="carousel-caption">
+          <p>.</p>
+        </div>      
+      </div>
+	
+	 <div class="item">
+        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+       	   <div class="carousel-caption">
+          <p>.</p>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+	<p></p>
+</div>
+    </div>
+    <div class="col-sm-4">  
+	  <p>.</p>
+      <div class=well>DETAILS</div>
+         
+    </div>
+	</div>
+	<div class="row">
+    <div class="col-sm-8">
+       <p>.</p>
+	   <div class=well>DESCRIPTION</div>
+       
+      </div>
+    </div>
+  </div>
+</div><br>
+</div>
+<div id="about" class="tab-pane fade">
+      <h1>About</h1>
+      <h2><blockquote> This website is for people who are planning to visit Knoxville area.
+	          This website helps travelers to create their itinerary.</blockquote></h2>
+    </div>
+
+<div>
+<footer class="container-fluid text-center" style="color:#66998c;">
+  <p>This site is created for educational reason.</p>
+</footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+  nav, footer { 
+			   background-color: white;
+              } 
+  body {
+        background-color: grey;
+		font-family: "Lato", sans-serif;
+       }
+  div {	
+       color: black;
+	   font-weight: bold;
+	  }
+  p {
+     color: white;
+    }
+  li {
+      text-align: center;
+	 }
+	 
+  .image {
+          opacity: 1;
+		  display: block;
+		  width: 100%;
+		  height: auto;
+		  transition: .5s ease;
+		  backface-visibility: hidden;
+	     }
+
+  .middle {
+		transition: .5s ease;
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		text-align: center;
+		  }
+  .white {
+          color: white;
+		 }
+
+	.col-sm-6:hover .image {
+				opacity: 0.3;
+						   }
+
+	.col-sm-6:hover .middle {
+					opacity: 1;
+                            }
+
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+  .navbar {
+           margin-bottom: 0;
+           border-radius: 0;
+          }
+/* Add a background color and some padding to the footer */
+  footer {
+          padding: 15px;
+          bottom: 0;
+		  margin: 0;
+         }
+    
+  .carousel-inner img {
+                       /* Set width to 100% */
+                       width: 100%; 
+                       margin: 0;
+                       min-height:200px;
+                      }
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 500px) {
+                             .carousel-caption {
+                                                display: none; 
+                                               }
+                            }
